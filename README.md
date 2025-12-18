@@ -1,3 +1,11 @@
+## Running Locally
+This site uses Jekyll to eliminate the need to manually update each page when the layout or header is changed. This is done natively on the github pages page, but running locally on your machine requires the following steps:
+
+1. Install Ruby and Bundler (if not already installed)
+2. Install dependencies: `bundle install`
+3. Start the local server: `bundle exec jekyll serve`
+4. Open your browser to `http://localhost:4000`
+
 ## Structure
 
 ```

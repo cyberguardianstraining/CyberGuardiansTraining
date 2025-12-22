@@ -1,0 +1,242 @@
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #000;
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.instructions {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.instructions h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.instructions p {
+    margin-bottom: 10px;
+}
+
+.instructions ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+}
+
+.comparison-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.cracker-panel {
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+}
+
+.panel-header {
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.current-attempt-value {
+    font-size: 48px;
+    font-weight: 300;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-all;
+}
+
+.milestones {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.speed-disclaimer {
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.milestone-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.milestone-label {
+    font-size: 13px;
+    color: #666;
+    font-family: 'Courier New', monospace;
+    min-width: 90px;
+}
+
+.milestone-status {
+    flex: 1;
+    font-size: 14px;
+    color: #999;
+    display: flex;
+    align-items: center;
+}
+
+.milestone-check {
+    color: #4caf50;
+    font-size: 16px;
+}
+
+.progress-bar-mini {
+    flex: 1;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-mini-fill {
+    height: 100%;
+    background: #000;
+    transition: width 0.3s;
+}
+
+.charset-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.expand-btn {
+    width: 100%;
+    padding: 8px;
+    margin-top: 20px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    color: #999;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.expand-btn:hover {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #666;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox-label:hover span {
+    color: #000;
+}
+
+.speed-controls {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.speed-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    color: #666;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    transition: all 0.2s;
+}
+
+.speed-btn:hover {
+    border-color: #000;
+    color: #000;
+}
+
+.speed-btn.active {
+    background: #000;
+    color: white;
+    border-color: #000;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #000;
+    background: white;
+    color: #000;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: #000;
+    color: white;
+}
+
+.btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    background: white;
+    color: #000;
+}

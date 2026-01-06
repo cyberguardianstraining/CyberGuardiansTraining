@@ -21,46 +21,28 @@ class PasswordCracker {
             speedDisclaimer: document.getElementById(`speed-disclaimer-${id}`)
         };
 
-        this.attachEventListeners();
-        this.updateCharset();
+        // Set fixed character sets based on panel
+        if (this.id === 1) {
+            // Panel 1: lowercase only
+            this.charset = this.baseCharset;
+        } else {
+            // Panel 2: all character types
+            this.charset = this.baseCharset + this.uppercase + this.numbers + this.symbols;
+            this.charset = this.charset.split('').sort().join('');
+        }
+
+        this.currentAttempt = this.charset[0];
+        this.elements.currentAttemptDisplay.textContent = this.currentAttempt;
     }
 
     attachEventListeners() {
-        this.elements.uppercaseCheck.addEventListener('change', () => {
-            this.updateCharset();
-            this.reset();
-        });
-
-        this.elements.numbersCheck.addEventListener('change', () => {
-            this.updateCharset();
-            this.reset();
-        });
-
-        this.elements.symbolsCheck.addEventListener('change', () => {
-            this.updateCharset();
-            this.reset();
-        });
+        // Character set controls are now disabled/hidden
     }
 
     updateCharset() {
-        this.charset = this.baseCharset;
-
-        if (this.elements.uppercaseCheck.checked) {
-            this.charset += this.uppercase;
-        }
-        if (this.elements.numbersCheck.checked) {
-            this.charset += this.numbers;
-        }
-        if (this.elements.symbolsCheck.checked) {
-            this.charset += this.symbols;
-        }
-
-        // Sort charset to ensure consistent ordering
-        this.charset = this.charset.split('').sort().join('');
-
-        // Reset to first character
-        this.currentAttempt = this.charset[0];
-        this.elements.currentAttemptDisplay.textContent = this.currentAttempt;
+        // Character sets are now fixed per panel in constructor
+        // Panel 1: lowercase only
+        // Panel 2: all character types
     }
 
     getNextPassword(current) {
@@ -211,7 +193,7 @@ class PasswordCracker {
                 if (showEstimates) {
                     const timeRemaining = this.getTimeRemainingAtCurrentLength(attemptsPerSecond);
                     const timeEstimate = this.formatTimeEstimate(timeRemaining);
-                    progressHTML += `<span style="color: #ccc; font-size: 12px; margin-left: 8px;">${timeEstimate}</span>`;
+                    progressHTML += `<span style="color: #000; font-size: 16px; margin-left: 8px; font-weight: 300;">${timeEstimate} left</span>`;
                 }
 
                 statusDiv.innerHTML = progressHTML;
@@ -220,7 +202,7 @@ class PasswordCracker {
                 if (showEstimates) {
                     const timeInSeconds = this.getTimeToReachLength(length, attemptsPerSecond);
                     const timeEstimate = this.formatTimeEstimate(timeInSeconds);
-                    statusDiv.innerHTML = `<span style="color: #ccc; font-size: 12px;">${timeEstimate}</span>`;
+                    statusDiv.innerHTML = `<span style="color: #000; font-size: 16px; font-weight: 300;">${timeEstimate} left</span>`;
                 } else {
                     statusDiv.textContent = '-';
                 }
@@ -229,11 +211,11 @@ class PasswordCracker {
     }
 
     addMilestone(length) {
-        const dots = '•'.repeat(length);
+        const label = length === 1 ? '1 character' : `${length} characters`;
         const item = document.createElement('div');
         item.className = 'milestone-item';
         item.innerHTML = `
-            <div class="milestone-label">${dots} (${length})</div>
+            <div class="milestone-label">${label}</div>
             <div class="milestone-status">-</div>
         `;
         this.elements.milestonesContainer.appendChild(item);
@@ -295,9 +277,7 @@ class PasswordCracker {
     }
 
     setCheckboxesEnabled(enabled) {
-        this.elements.uppercaseCheck.disabled = !enabled;
-        this.elements.numbersCheck.disabled = !enabled;
-        this.elements.symbolsCheck.disabled = !enabled;
+        // No checkboxes to enable/disable - character sets are fixed
     }
 }
 
@@ -305,7 +285,7 @@ class BruteForceVisualizer {
     constructor() {
         this.cracker1 = new PasswordCracker(1);
         this.cracker2 = new PasswordCracker(2);
-        this.attemptsPerSecond = 100000;
+        this.attemptsPerSecond = 1000;
         this.startTime = null;
         this.running = false;
         this.intervalId = null;

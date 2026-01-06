@@ -30,23 +30,19 @@ Create a new folder in the `demos/` directory:
 
 ### Step 2: Create Demo Files
 
-Copy the example demo structure or create three files:
-
-1. **index.html** - Your demo page
-2. **style.css** - Styling for your demo
-3. **script.js** - JavaScript functionality
+Put your demo in the new folder, either as a single html file or separated into html, css and js if preferred.
 
 
 #### Key Points
 
-- Include a back navigation link: `<a href="../../index.html">Back to Home</a>`
+- Include a back navigation link: `<a href="../../demonstrations.html">Back to Demonstations</a>`
 - Keep the demo self-contained within its directory
 - Use relative paths for assets
 - Match the existing color scheme for consistency (optional)
 
-### Step 3: Add Demo Card to Homepage
+### Step 3: Add Demo Card to Demonstrations Page
 
-Edit `index.html` and add a new demo card to the grid:
+Edit `demonstrations.html` and add a new demo card to the grid:
 
 ```html
 <a href="demos/your-demo-name/" class="demo-card">

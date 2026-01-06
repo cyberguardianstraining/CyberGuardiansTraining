@@ -24,14 +24,22 @@ title: Brute Force Password Visualizer
     </div>
 
     <div class="speed-controls">
-        <button class="speed-btn" data-speed="10">10/s</button>
-        <button class="speed-btn" data-speed="1000">1K/s</button>
-        <button class="speed-btn active" data-speed="10000">10K/s</button>
-        <button class="speed-btn" data-speed="100000">100K/s</button>
-        <button class="speed-btn" data-speed="1000000">1M/s</button>
-        <button class="speed-btn" data-speed="10000000">10M/s</button>
-        <button class="speed-btn" data-speed="100000000">100M/s</button>
-        <button class="speed-btn" data-speed="1000000000">1B/s</button>
+        <button class="speed-btn" data-speed="1000">
+            <span class="speed-label">Very Slow</span>
+            <span class="speed-value">1,000/s</span>
+        </button>
+        <button class="speed-btn active" data-speed="100000">
+            <span class="speed-label">Slow</span>
+            <span class="speed-value">100,000/s</span>
+        </button>
+        <button class="speed-btn" data-speed="10000000">
+            <span class="speed-label">Fast</span>
+            <span class="speed-value">10M/s</span>
+        </button>
+        <button class="speed-btn" data-speed="1000000000">
+            <span class="speed-label">Very Fast</span>
+            <span class="speed-value">1B/s</span>
+        </button>
     </div>
 
     <div class="comparison-container">
@@ -92,7 +100,7 @@ title: Brute Force Password Visualizer
             </div>
 
             <div class="speed-disclaimer" id="speed-disclaimer-1">
-                Estimates based on current speed of 10,000 guesses/second
+                Estimates based on current speed of 100,000 guesses/second
             </div>
 
             <div class="charset-controls">
@@ -170,7 +178,7 @@ title: Brute Force Password Visualizer
             </div>
 
             <div class="speed-disclaimer" id="speed-disclaimer-2">
-                Estimates based on current speed of 10,000 guesses/second
+                Estimates based on current speed of 100,000 guesses/second
             </div>
 
             <div class="charset-controls">

@@ -305,7 +305,7 @@ class BruteForceVisualizer {
     constructor() {
         this.cracker1 = new PasswordCracker(1);
         this.cracker2 = new PasswordCracker(2);
-        this.attemptsPerSecond = 10000;
+        this.attemptsPerSecond = 100000;
         this.startTime = null;
         this.running = false;
         this.intervalId = null;
